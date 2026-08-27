@@ -1,0 +1,39 @@
+Here is a simple breakdown of both questions without the complex machine learning jargon:
+
+1. What the Quote Means (In Plain English)
+"The Random Forest estimates baseline structural allocation based on historical tender distributions. For macro-economic inflation adjustments beyond the dataset range, a standard inflation multiplier can be applied to the baseline."
+
+Simply put:
+
+"The model looks at what similar past projects actually cost."
+
+Instead of guessing out of nowhere, the computer looks back at older C&W construction contracts (tenders) for similar buildings and uses those past numbers to set a starting price (the baseline).
+
+"It doesn't automatically add future inflation."
+
+The model only knows what happened in the past data it was trained on. It doesn't know about future price hikes for cement, steel, or fuel in 2027.
+
+"You have to manually add inflation for future years."
+
+If you want to estimate what a building will cost 3 years from now, take the number this app gives you, and manually add an extra percentage (like 10% or 15%) to account for expected future inflation.
+
+2. What This Model Predicts
+This model predicts the Total Construction Budget (in Millions PKR) required to build a public infrastructure project.
+
+When you enter:
+
+Where the building is located (District & Tehsil)
+
+What type of building it is (Agriculture, Social Work, etc.)
+
+How big and complex it is (Number of Floors, Foundation Type, Structure Type)
+
+The expected rate (Cost per sqft)
+
+The model estimates:
+
+"Based on past C&W projects, this building will cost approximately Rs. X Million to construct."
+
+It serves as a quick automated estimate for engineers and planners to get an immediate budget baseline before spending weeks writing detailed manual cost sheets.
+
+Would you like to add an automatic inflation percentage slider to the Streamlit app so users can adjust predictions for future years?

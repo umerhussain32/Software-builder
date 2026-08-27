@@ -1,0 +1,42 @@
+{
+  "name": "cw-cost-predictor",
+  "version": "1.0.0",
+  "description": "C&W Public Infrastructure Cost Analysis Desktop App",
+  "main": "./main.js",
+  "scripts": {
+    "dump": "dump-stlite-desktop-artifacts",
+    "serve": "cross-env NODE_ENV=production electron .",
+    "app:dist": "electron-builder --win"
+  },
+  "stlite": {
+    "desktop": {
+      "files": [
+        "streamlit_app/app.py",
+        "streamlit_app/cw logo.jpg",
+        "streamlit_app/Cleaned_Dataset/Cleaned_C&W_Dataset.csv",
+        "streamlit_app/Model/C&W_model.pkl",
+        "streamlit_app/Model/C&W_encoder.pkl"
+      ],
+      "entrypoint": "streamlit_app/app.py",
+      "requirementsTxtFiles": [
+        "streamlit_app/requirements.txt"
+      ]
+    }
+  },
+  "build": {
+    "files": [
+      "build/**/*",
+      "main.js"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "@stlite/desktop": "^0.79.0",
+    "cross-env": "^7.0.3",
+    "electron": "22.3.27",
+    "electron-builder": "^24.9.0"
+  }
+}
