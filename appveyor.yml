@@ -1,0 +1,20 @@
+# Select Windows environment image
+image: Visual Studio 2022
+
+# Do not use MSBuild (we are using Node.js)
+build: off
+
+# Set up Node.js runtime environment
+install:
+  - ps: Install-Product node 22 x64
+  - npm install
+
+# Build and package the Electron executable
+test_script:
+  - npm run dump
+  - npm run app:dist
+
+# Save the built installer as an artifact for download
+artifacts:
+  - path: dist\*.exe
+    name: Windows-Setup-Installer
