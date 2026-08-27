@@ -42,3 +42,4 @@ jobs:
         with:
           name: Windows-Setup-Installer
           path: dist/*.exe
+          compression-level: 0
