@@ -1,11 +1,10 @@
 {
-  "name": "cw-cost-predictor",
+  "name": "cw-infrastructure-ml-app",
   "version": "1.0.0",
   "description": "C&W Public Infrastructure Cost Analysis Desktop App",
   "main": "./main.js",
   "scripts": {
     "dump": "dump-stlite-desktop-artifacts",
-    "serve": "cross-env NODE_ENV=production electron .",
     "app:dist": "electron-builder --win"
   },
   "stlite": {
@@ -35,7 +34,6 @@
   },
   "devDependencies": {
     "@stlite/desktop": "^0.79.0",
-    "cross-env": "^7.0.3",
     "electron": "22.3.27",
     "electron-builder": "^24.9.0"
   }
