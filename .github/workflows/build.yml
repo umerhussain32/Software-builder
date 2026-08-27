@@ -3,7 +3,7 @@ name: Build Windows App
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch: # Allows manual trigger from the GitHub web UI
+  workflow_dispatch:
 
 jobs:
   build:
@@ -16,11 +16,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 22
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Dump Stlite Artifacts
         run: npm run dump
