@@ -1,5 +1,5 @@
 {
-  "name": "cw-infrastructure-ml-app",
+  "name": "CW_CP",
   "version": "1.0.0",
   "description": "C&W Public Infrastructure Cost Analysis Desktop App",
   "main": "./main.js",
@@ -23,17 +23,21 @@
     }
   },
   "build": {
+    "productName": "CW_CP",
     "files": [
       "build/**/*",
-      "main.js"
+      "main.js",
+      "node_modules/@stlite/desktop/**/*"
     ],
     "win": {
       "target": "nsis",
       "icon": "icon.ico"
     }
   },
+  "dependencies": {
+    "@stlite/desktop": "^0.79.0"
+  },
   "devDependencies": {
-    "@stlite/desktop": "^0.79.0",
     "electron": "22.3.27",
     "electron-builder": "^24.9.0"
   }
